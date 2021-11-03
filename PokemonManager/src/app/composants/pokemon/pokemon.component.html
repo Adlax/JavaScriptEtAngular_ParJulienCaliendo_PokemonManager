@@ -1,0 +1,9 @@
+<ul class="menu-list" (click)="selection(pokemonLocal)">
+  <div *ngIf="pokemonLocal">
+    <img src="{{ pokemonLocal.sprites.front_default }}"/>
+    <li>Nom:<span *ngIf="pokemonLocal.name; else na">{{ pokemonLocal.name | titlecase }}</span></li>
+    <li>Taille:<span *ngIf="pokemonLocal.height; else na">{{ pokemonLocal.height/10 | number:'1.0-2' }}</span></li>
+    <li>Poids:<span *ngIf="pokemonLocal.weight; else na">{{ pokemonLocal.weight/10 | number:'1.0-2' }}</span></li>
+    <ng-template #na>N/A</ng-template>
+  </div>
+</ul>
